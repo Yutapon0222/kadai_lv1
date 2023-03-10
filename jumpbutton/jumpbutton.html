@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+<!-- 外部ファイルとしてCSSファイルを読み込む -->
+<link rel="stylesheet" href="jumpbutton.css">
+<!-- 外部ファイルとしてjavascriptファイルを読み込む -->
+<script type="text/javascript" src="jumpbutton.js"></script>
+</head>
+<body>
+
+<audio id="button" preload="auto"> <!-- ■2. id名を付加したaudio要素を記述する -->
+    <source src="./audio/choose.mp3" type="audio/mp3">
+</audio>
+
+<!-- 音声の要素を複数設置したい場合（ここから） -->
+<audio id="button1" preload="auto"> <!-- ■2. id名を付加したaudio要素を記述する 複数設置 -->
+    <source src="./audio/cursor1.mp3" type="audio/mp3">
+</audio>
+
+<audio id="button2" preload="auto"> <!-- ■2. id名を付加したaudio要素を記述する -->
+    <source src="./audio/cursor2.mp3" type="audio/mp3">
+</audio>
+
+<!-- 音声の要素を複数設置したい場合（ここまで） -->
+
+<input type="button" onclick="ring();" value="button"> <!-- ■3. ボタンクリックで、1で作った再生用関数が実行されるようにする -->
+
+<div class="btn" input type="button1" onclick="ring1();" value="button1">button1</div> <!-- ■3. ボタンクリックで、1で作った再生用関数が実行されるようにする -->
+
+<div class="btn" input type="button2" onclick="ring2();" value="button2">button2</div> <!-- ■3. ボタンクリックで、1で作った再生用関数が実行されるようにする -->
+
+<!-- <audio controls>
+  <source src="./audio/choose.mp3" type="audio/mp3">
+</audio> -->
+
+
+</body>
+</html>

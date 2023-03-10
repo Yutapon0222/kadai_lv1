@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+     <!-- 外部ファイルとしてCSSファイルを読み込む  -->
+<link rel="stylesheet" href="caluculate.css">
+ <!--  外部ファイルとしてjavascriptファイルを読み込む -->
+<script type="text/javascript" src="caluculate.js"></script>
+</head>
+ 
+<body>
+      <!-- 音声部分 -->
+      <!-- 1つのidにつき1つずつ音源とaudioタグ配置 preload="auto"で先に読み込む-->
+<audio id="button" preload="auto"> 
+        <!-- 頭に"./"でフォルダ移動-->
+    <source src="./audio/choose.mp3" type="audio/mp3">
+</audio>
+
+<audio id="button1" preload="auto"> 
+  <source src="./audio/cursor1.mp3" type="audio/mp3">
+</audio>
+
+<audio id="button2" preload="auto"> 
+  <source src="./audio/cursor2.mp3" type="audio/mp3">
+</audio>
+
+<audio id="button3" preload="auto"> 
+  <source src="./audio/cursor3.mp3" type="audio/mp3">
+</audio>
+
+  <form name="dentaku">
+    <table>
+      <!-- 液晶画面部分 -->
+      <tr>
+        <td colspan="4">
+          <input type="text" class="display" name="display" value="" disabled>
+        </td>
+      </tr>
+ 
+      <!-- 上から1段目（7~9＋÷） -->
+      <tr>
+        <!-- onclick内","をつけることで２つの処理ができる-->
+        <!-- ring1()でjavascriptの要素呼び出し-->
+        <td><input type="button" value="7" onclick="get_calc(this),ring1()"></td>
+        <td><input type="button" value="8" onclick="get_calc(this),ring2()"></td>
+        <td><input type="button" value="9" onclick="get_calc(this),ring3()"></td>
+        <td><input type="button" value="/" class="operator" name="div_btn" onclick="get_calc(this)"></td>
+      </tr>
+        
+      <!-- 上から2段目（4~6＋×） -->
+      <tr>
+        <td><input type="button" value="4" onclick="get_calc(this)"></td>
+        <td><input type="button" value="5" onclick="get_calc(this)"></td>
+        <td><input type="button" value="6" onclick="get_calc(this)"></td>
+        <td><input type="button" value="*" class="operator" name="multi_btn" onclick="get_calc(this)"></td>
+      </tr>
+ 
+      <!-- 上から3段目（1~3＋-） -->
+      <tr>
+        <td><input type="button" value="1" onclick="get_calc(this)"></td>
+        <td><input type="button" value="2" onclick="get_calc(this)"></td>
+        <td><input type="button" value="3" onclick="get_calc(this)"></td>
+        <td><input type="button" value="-" class="operator" onclick="get_calc(this)"></td>
+      </tr>
+ 
+      <!-- 上から4段目（0/C/=/+) -->
+      <tr>
+        <td><input type="button" value="0" onclick="get_calc(this)"></td>
+        <td><input type="button" value="C" onclick="get_calc(this)"></td>
+        <td><input type="button" value="=" class="equal" onclick="get_calc(this)"></td>
+        <td><input type="button" value="+" class="operator" onclick="get_calc(this)"></td>
+      </tr>
+
+      <!-- 上から5段目（sound) -->
+      <tr>
+        <td>
+          <!-- ■3. ボタンクリックで、1で作った再生用関数が実行されるようにする -->
+		<input type="button" onclick="ring();" value="button"> 
+	</td>
+      </tr>
+ 
+    </table>
+  </form>
+</body>
+</html>
+
